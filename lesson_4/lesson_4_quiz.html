@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity & Safe Internet Practices - Quiz</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2d2d2d;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #b392f0;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #b392f0;
+            padding-bottom: 10px;
+        }
+        .question {
+            background-color: #333;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #b392f0;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #b392f0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+        .btn:hover {
+            background: #8e44ad;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+            text-align: center;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-shield-alt"></i> Cybersecurity & Safe Internet Practices - Quiz</h1>
+        <div class="question">
+            <p>1. What is the primary goal of a phishing attack?</p>
+            <input type="radio" name="q1" value="A"> A. To install malware on your device<br>
+            <input type="radio" name="q1" value="B"> B. To trick you into revealing sensitive information<br>
+            <input type="radio" name="q1" value="C"> C. To slow down your internet connection<br>
+            <input type="radio" name="q1" value="D"> D. To encrypt your files<br>
+        </div>
+        <div class="question">
+            <p>2. Which of the following is a recommended practice to avoid malware?</p>
+            <input type="radio" name="q2" value="A"> A. Download files from unknown sources<br>
+            <input type="radio" name="q2" value="B"> B. Keep your software and antivirus updated<br>
+            <input type="radio" name="q2" value="C"> C. Open email attachments without checking<br>
+            <input type="radio" name="q2" value="D"> D. Disable automatic updates<br>
+        </div>
+        <div class="question">
+            <p>3. What is a strong password characteristic?</p>
+            <input type="radio" name="q3" value="A"> A. Using common words like "password"<br>
+            <input type="radio" name="q3" value="B"> B. Using a mix of uppercase, lowercase, numbers, and symbols<br>
+            <input type="radio" name="q3" value="C"> C. Using your name or birthdate<br>
+            <input type="radio" name="q3" value="D"> D. Using the same password for all accounts<br>
+        </div>
+        <div class="question">
+            <p>4. What does Two-Factor Authentication (2FA) add to your security?</p>
+            <input type="radio" name="q4" value="A"> A. An extra layer of security by requiring a second verification step<br>
+            <input type="radio" name="q4" value="B"> B. A faster login process<br>
+            <input type="radio" name="q4" value="C"> C. Automatic password generation<br>
+            <input type="radio" name="q4" value="D"> D. A way to bypass passwords<br>
+        </div>
+        <div class="question">
+            <p>5. Which of the following is a good practice for safe browsing?</p>
+            <input type="radio" name="q5" value="A"> A. Clicking on suspicious links<br>
+            <input type="radio" name="q5" value="B"> B. Using public Wi-Fi without a VPN<br>
+            <input type="radio" name="q5" value="C"> C. Avoiding unknown websites<br>
+            <input type="radio" name="q5" value="D"> D. Sharing passwords with friends<br>
+        </div>
+        <div class="question">
+            <p>6. What should you do if you suspect a phishing attempt?</p>
+            <input type="radio" name="q6" value="A"> A. Respond to the email to verify its legitimacy<br>
+            <input type="radio" name="q6" value="B"> B. Report the phishing attempt and delete the email<br>
+            <input type="radio" name="q6" value="C"> C. Click on the link to see where it leads<br>
+            <input type="radio" name="q6" value="D"> D. Forward the email to friends<br>
+        </div>
+        <div class="question">
+            <p>7. What is the purpose of using a password manager?</p>
+            <input type="radio" name="q7" value="A"> A. To store and generate strong, unique passwords for each account<br>
+            <input type="radio" name="q7" value="B"> B. To share passwords with others<br>
+            <input type="radio" name="q7" value="C"> C. To remember passwords for you<br>
+            <input type="radio" name="q7" value="D"> D. To bypass 2FA<br>
+        </div>
+        <button class="btn" onclick="checkAnswers()">Submit Answers</button>
+        <p class="result" id="result"></p>
+    </div>
+    <script>
+        function checkAnswers() {
+            let answers = { q1: "B", q2: "B", q3: "B", q4: "A", q5: "C", q6: "B", q7: "A" };
+            let score = 0;
+            let total = Object.keys(answers).length;
+            for (let key in answers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                if (selected && selected.value === answers[key]) {
+                    score++;
+                }
+            }
+            document.getElementById("result").innerText = `Your score: ${score} out of ${total}.`;
+        }
+    </script>
+</body>
+</html>
