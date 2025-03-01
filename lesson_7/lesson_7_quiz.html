@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using AI for Productivity & Research - Quiz</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2d2d2d;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #68d391;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #68d391;
+            padding-bottom: 10px;
+        }
+        .question {
+            background-color: #333;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #68d391;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #68d391;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+        .btn:hover {
+            background: #4CAF50;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+            text-align: center;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-tools"></i> Using AI for Productivity & Research - Quiz</h1>
+        <div class="question">
+            <p>1. What is a key feature of AI-powered search engines?</p>
+            <input type="radio" name="q1" value="A"> A. They only search for text-based content<br>
+            <input type="radio" name="q1" value="B"> B. They understand natural language queries<br>
+            <input type="radio" name="q1" value="C"> C. They require specific keywords to function<br>
+            <input type="radio" name="q1" value="D"> D. They cannot handle voice or image searches<br>
+        </div>
+        <div class="question">
+            <p>2. Which of the following is an example of an AI writing assistant?</p>
+            <input type="radio" name="q2" value="A"> A. Google Docs<br>
+            <input type="radio" name="q2" value="B"> B. Grammarly<br>
+            <input type="radio" name="q2" value="C"> C. Microsoft Excel<br>
+            <input type="radio" name="q2" value="D"> D. Adobe Photoshop<br>
+        </div>
+        <div class="question">
+            <p>3. What does an AI-powered note-taking tool typically offer?</p>
+            <input type="radio" name="q3" value="A"> A. Automatic summarization of notes<br>
+            <input type="radio" name="q3" value="B"> B. Manual tagging of all content<br>
+            <input type="radio" name="q3" value="C"> C. Limited storage for notes<br>
+            <input type="radio" name="q3" value="D"> D. No voice-to-text functionality<br>
+        </div>
+        <div class="question">
+            <p>4. Which of these is a recommended tip for using AI tools effectively?</p>
+            <input type="radio" name="q4" value="A"> A. Rely solely on AI for all tasks<br>
+            <input type="radio" name="q4" value="B"> B. Avoid checking AI-generated content<br>
+            <input type="radio" name="q4" value="C"> C. Provide clear and specific inputs<br>
+            <input type="radio" name="q4" value="D"> D. Use the same AI tool for every task<br>
+        </div>
+        <div class="question">
+            <p>5. What is a benefit of using AI for writing?</p>
+            <input type="radio" name="q5" value="A"> A. It eliminates the need for human input<br>
+            <input type="radio" name="q5" value="B"> B. It helps improve grammar and style<br>
+            <input type="radio" name="q5" value="C"> C. It slows down the writing process<br>
+            <input type="radio" name="q5" value="D"> D. It only works for technical writing<br>
+        </div>
+        <div class="question">
+            <p>6. Which AI tool is best for transcribing spoken words into text?</p>
+            <input type="radio" name="q6" value="A"> A. ChatGPT<br>
+            <input type="radio" name="q6" value="B"> B. Otter.ai<br>
+            <input type="radio" name="q6" value="C"> C. Grammarly<br>
+            <input type="radio" name="q6" value="D"> D. Perplexity.ai<br>
+        </div>
+        <div class="question">
+            <p>7. How can AI enhance research productivity?</p>
+            <input type="radio" name="q7" value="A"> A. By automating repetitive tasks<br>
+            <input type="radio" name="q7" value="B"> B. By reducing the need for data analysis<br>
+            <input type="radio" name="q7" value="C"> C. By limiting access to information<br>
+            <input type="radio" name="q7" value="D"> D. By requiring more manual input<br>
+        </div>
+        <button class="btn" onclick="checkAnswers()">Submit Answers</button>
+        <p class="result" id="result"></p>
+    </div>
+    <script>
+        function checkAnswers() {
+            let answers = { q1: "B", q2: "B", q3: "A", q4: "C", q5: "B", q6: "B", q7: "A" };
+            let score = 0;
+            let total = Object.keys(answers).length;
+            for (let key in answers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                if (selected && selected.value === answers[key]) {
+                    score++;
+                }
+            }
+            document.getElementById("result").innerText = `Your score: ${score} out of ${total}.`;
+        }
+    </script>
+</body>
+</html>
